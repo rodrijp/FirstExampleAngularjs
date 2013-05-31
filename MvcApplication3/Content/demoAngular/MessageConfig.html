@@ -1,0 +1,14 @@
+﻿<form>
+    <fieldset>
+        <legend>MessageConfig:</legend>
+        <label for="to">To:</label>
+        <input type="text" name="to" id="to" ng-model="MessageConfig.To"/>
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" id="subject" ng-model="MessageConfig.Subject"/>
+        <br />
+        <span>{{response}}</span>
+        <br />
+        <button ng-click="Save()">Save</button>
+        <button ng-click="GoSend()">Cancel</button>
+    </fieldset>                
+</form>

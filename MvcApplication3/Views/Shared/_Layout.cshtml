@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html ng-app="demoApp" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/themes/base/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        <script src="~/Scripts/angular.js"></script>
+        <script src="~/Scripts/demoAngularApp.js"></script>
+        <script src="~/Scripts/demoAngularMessageController.js"></script>
+        <script src="~/Scripts/demoAngularMessageConfigController.js"></script>        
+        <script src="~/Scripts/demoAngularMessageSendedController.js"></script>
+        <script>
+  $(function() {
+      $("#angularDialogbtn").click(function () {
+          $("#angularDialog").dialog({ height:400, width:450 });
+      });
+  });
+  </script>
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li id="angularDialogbtn">Dialog</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+            </div>
+        </footer>
+        <div id="angularDialog" title="Basic dialog" style="display:none">
+            <div ng-view></div>
+        </div>        
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

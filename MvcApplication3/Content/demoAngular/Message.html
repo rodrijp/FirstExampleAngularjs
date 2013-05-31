@@ -1,0 +1,11 @@
+﻿<form>
+    <fieldset>
+        <legend>Message:</legend>
+        <label for="message">Message:</label>
+        <input type="text" name="message" id="message" ng-model="Message.Text"/>
+        <span>{{MessageStatus}}</span>
+        <br />
+        <button ng-click="Send()">Send</button>
+        <button ng-click="GoConfig()">Config</button>
+    </fieldset>                
+</form>
